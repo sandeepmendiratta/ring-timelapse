@@ -64,15 +64,23 @@ The following variables are optional:
 
 `CRON_SCHEDULE_TIMELAPSE` - Schedule for generating the timelapse video. Default: `0 7 * * *`
 
-## My setup
+## My setup Notes
 Create a aws ec2 instance
+
 yum install docker
+
 token="ccc"
+
 mkdir ~/media
+
 cd ~/media/
+
 mkdir timelapse
+
 docker run -d  -e TOKEN=$token -v "/home/ec2-user/media:/app/dist/target" --restart unless-stopped wictorwilen/ring-timelapse
 
+`ENV CRON_SCHEDULE="0 13 * * *"`
+`ENV CRON_SCHEDULE_TIMELAPSE="0 * 7 * *"`
 
 ## Authors
 
