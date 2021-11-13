@@ -48,6 +48,8 @@ docker run
   wictorwilen/ring-timelapse
 ```
 
+
+
 > **NOTE**: In the `-v` argument replace the local path (`/media/timelapse`) with the directory you created
 
 ## Environment Variables
@@ -62,6 +64,16 @@ The following variables are optional:
 
 `CRON_SCHEDULE_TIMELAPSE` - Schedule for generating the timelapse video. Default: `0 7 * * *`
 
+## My setup
+Create a aws ec2 instance
+yum install docker
+token="ccc"
+mkdir ~/media
+cd ~/media/
+mkdir timelapse
+docker run -d  -e TOKEN=$token -v "/home/ec2-user/media:/app/dist/target" --restart unless-stopped wictorwilen/ring-timelapse
+
+
 ## Authors
 
 - [@wictorwilen](https://www.github.com/wictorwilen)
@@ -69,3 +81,4 @@ The following variables are optional:
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
